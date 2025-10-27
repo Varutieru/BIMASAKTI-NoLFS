@@ -78,14 +78,16 @@ export const Header = () => {
     }
   };
 
-  const handleMobileNavClick = (href: string) => {
+  const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setIsMobileMenuOpen(false);
     if (href === "/" && pathname === "/") {
+      e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
     } else if (href === "/sponsors") {
+      e.preventDefault();
       if (pathname === "/") {
         const sponsorSection = document.getElementById('sponsorPage');
         if (sponsorSection) {
@@ -117,13 +119,12 @@ export const Header = () => {
         <div className="flex justify-between items-center w-full">
           {/* LOGO */}
           <div className="min-w-[17.813vw] sm:min-w-[17.813vw] lg:min-w-[5.885vw] min-h-[60px] sm:min-h-[60px] md:min-h-[80px] lg:min-h-[100px] relative">
-            <button className="relative w-full h-full">
+            <button className="absolute inset-0" onClick={() => router.push("/")}>
               <Image
                 src={"assets/Header/logobimsakblack.svg"}
                 alt="Bimasakti Logo"
                 fill
                 className="object-contain cursor-pointer"
-                onClick={() => router.push("/")}
               />
             </button>
           </div>
@@ -204,7 +205,7 @@ export const Header = () => {
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => handleMobileNavClick(item.href)}
+              onClick={(e) => handleMobileNavClick(e, item.href)}
               className="py-4 text-lg text-[#AE0101] font-century-gothic-regular border-b border-gray-200 hover:bg-gray-50 transition-colors duration-200"
             >
               {item.label}

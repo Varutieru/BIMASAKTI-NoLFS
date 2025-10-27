@@ -55,5 +55,5 @@ export default function Bm13Evo(props: React.ComponentProps<'group'>) {
   return <primitive object={gltf.scene} {...props} />;
 }
 
-// ✅ Preload the Draco-compressed model
+// ✅ Preload the Draco-compressed model compressor
 useGLTF.preload('/models/bm-13evo-draco.glb');
