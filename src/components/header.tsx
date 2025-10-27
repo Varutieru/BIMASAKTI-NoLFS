@@ -117,7 +117,7 @@ export const Header = () => {
         <div className="flex justify-between items-center w-full">
           {/* LOGO */}
           <div className="min-w-[17.813vw] sm:min-w-[17.813vw] lg:min-w-[5.885vw] min-h-[60px] sm:min-h-[60px] md:min-h-[80px] lg:min-h-[100px] relative">
-            <button>
+            <button className="relative w-full h-full">
               <Image
                 src={"assets/Header/logobimsakblack.svg"}
                 alt="Bimasakti Logo"
