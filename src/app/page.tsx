@@ -211,7 +211,8 @@ export default function HomePage() {
             <div className="absolute left-1/2 -translate-x-1/2 bottom-[8vh] sm:bottom-[10vh] z-40 hover:drop-shadow-[10px_5px_0_rgba(242,1,60,1)] sm:hover:drop-shadow-[15px_8px_0_rgba(242,1,60,1)] md:hover:drop-shadow-[20px_10px_0_rgba(242,1,60,1)] transition-all duration-[340ms]">
               <button
                 onClick={() => {
-                  scrollToSection()
+                  scrollToSection();
+                  handleCameraChange([-7.5, 1.5, 0]);
                 }}
                 type="button"
                 className="flex items-center justify-center bg-[#CC0100]
